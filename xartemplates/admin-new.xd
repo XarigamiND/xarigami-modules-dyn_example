@@ -1,0 +1,49 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<!-- common admin menu for this module - remove link to the current function -->
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+         <xar:comment>Common module menu - only show the menus if this is NOT an ajax request</xar:comment>
+        <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="admin-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <h1><xar:mlstring>Add dynamic data example item</xar:mlstring></h1>
+
+        <div class="xar-mod-content">
+            <xar:set name="withupload">#$object->upload#</xar:set>
+            <xar:set name="enctype">'application/x-www-form-urlencoded'</xar:set>
+            <xar:if condition="!empty($withupload)">
+                <xar:set name="enctype">'multipart/form-data'</xar:set>
+            </xar:if>
+            <xar:if condition="!empty($preview)">
+                <fieldset>
+                    <legend><xar:mlstring>Preview</xar:mlstring></legend>
+
+                        <xar:data-display object="$object" tplmodule="dyn_example" />
+                </fieldset>
+            </xar:if>
+
+            <form method="post" action="&xar-modurl-dyn_example-admin-create;" enctype="#$enctype#">
+                <input type="hidden" name="authid" id="authid" value="#$authid#" />
+                <fieldset>
+                    <legend>
+                        <xar:mlstring>Create new</xar:mlstring>
+                    </legend>
+                    <!-- this does most of the hard work :) -->
+                    <xar:data-form object="$object" tplmodule="dyn_example" />
+
+                    <div class="xar-form-input-wrapper">
+                        #$hooks#
+                    </div>
+                    <div class="xar-form-footer">
+                        <input type="submit" name="preview" value="#xarML('Preview')#" />
+                        &#160; &#160;
+                        <input type="submit" value="#xarML('Create')#" />
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+
+<xar:if condition="!empty($isprimary) and xarModIsHooked('categories',$modname,$itemtype)">
+    <xar:template file="catnavigation"/>
+</xar:if>
+<xar:if condition="empty($layout) or $layout eq 'default'">
+    <p class="xar-accent xar-padding-topthick">
+            <xar:mlstring>
+                Template : <strong>modules/dyn_example/xartemplates/objects/showdisplay-dyn_example.xd</strong><br/>
+                This is a specific display template for the dyn_example object (if you want this)
+                in the dyn_example module (if you want that)
+            </xar:mlstring>
+    </p>
+    <table class="xar-noborder xar-fullwidth" cellspacing="1" cellpadding="2">
+    <xar:foreach in="$properties" key="$name" value="$property">
+        <tr class="xar-align-center xar-valign-middle">
+            <td class="xar-align-right"><strong><xar:data-label property="$properties[$name]" /> :</strong></td>
+            <td class="xar-align-left"><xar:data-output property="$properties[$name]" /> </td>
+        </tr>
+    </xar:foreach>
+    </table>
+<xar:else />
+    <p>
+        <xar:mlstring>Specify your own layout here...</xar:mlstring>
+    </p>
+    <p>
+        <xar:mlstring>
+            You can also specify a separate template, e.g. if you want to
+            handle individual fields differently for a particular module / itemtype
+        </xar:mlstring>
+    </p>
+</xar:if>

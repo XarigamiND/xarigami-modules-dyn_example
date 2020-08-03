@@ -1,0 +1,18 @@
+<xar:comment> License: GPL http://www.gnu.org/copyleft/gpl.html </xar:comment>
+<!-- common admin menu for this module - remove link to the current function -->
+<div class="xar-mod-page">
+    <div class="xar-mod-head">
+         <xar:comment>Common module menu - only show the menus if this is NOT an ajax request</xar:comment>
+        <xar:if condition="!xarRequestIsAJAX()">
+            <xar:template type="module" module="base" file="admin-menu" />
+        </xar:if>
+    </div>
+    <div class="xar-mod-body">
+        <xar:comment> the specific template content for the current admin function comes here </xar:comment>
+        <h1><xar:mlstring>Welcome to the Administration of Dynamic Example</xar:mlstring></h1>
+
+        <div class="xar-mod-content">
+        </div>
+    </div>
+
+</div>

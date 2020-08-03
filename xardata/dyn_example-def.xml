@@ -1,0 +1,54 @@
+<object name="dyn_example">
+  <objectid>7</objectid>
+  <label>Dynamic Example</label>
+  <moduleid>66</moduleid>
+  <itemtype>0</itemtype>
+  <urlparam>itemid</urlparam>
+  <maxid>3</maxid>
+  <config>nothing yet</config>
+  <isalias>1</isalias>
+  <properties>
+    <property name="id">
+      <id>43</id>
+      <label>Id</label>
+      <type>itemid</type>
+      <default>0</default>
+      <source>dynamic_data</source>
+      <status>1</status>
+      <order>1</order>
+      <validation></validation>
+    </property>
+    <property name="name">
+      <id>44</id>
+      <label>Name</label>
+      <type>textbox</type>
+      <default>your name</default>
+      <source>dynamic_data</source>
+      <status>1</status>
+      <order>2</order>
+      <validation>a:6:{s:13:"xv_min_length";s:1:"1";s:13:"xv_max_length";s:2:"30";s:7:"xv_size";s:2:"50";s:13:"xv_allowempty";s:1:"1";s:17:"xv_display_layout";s:7:"default";s:12:"xv_cansearch";s:1:"1";}</validation>
+    </property>
+    <property name="age">
+      <id>45</id>
+      <label>Age</label>
+      <type>integerbox</type>
+      <default></default>
+      <source>dynamic_data</source>
+      <status>1</status>
+      <order>3</order>
+      <validation>a:6:{s:6:"xv_min";s:1:"1";s:6:"xv_max";s:3:"125";s:7:"xv_size";s:2:"10";s:13:"xv_allowempty";s:1:"1";s:17:"xv_display_layout";s:7:"default";s:12:"xv_cansearch";s:1:"1";}</validation>
+    </property>
+    <property name="picture">
+      <id>46</id>
+      <label>Picture</label>
+      <type>image</type>
+      <default></default>
+      <source>dynamic_data</source>
+      <status>2</status>
+      <order>4</order>
+      <validation>a:9:{s:7:"xv_size";s:2:"50";s:13:"xv_allowempty";s:1:"1";s:17:"xv_display_layout";s:7:"default";s:12:"xv_cansearch";s:1:"1";s:15:"xv_image_source";s:3:"url";s:11:"xv_file_ext";s:20:"gif,jpg,jpeg,png,bmp";s:19:"xv_allow_duplicates";s:1:"0";s:16:"xv_max_file_size";s:7:"1000000";s:15:"xv_output_units";s:2:"px";}</validation>
+    </property>
+  </properties>
+</object>
+
+
